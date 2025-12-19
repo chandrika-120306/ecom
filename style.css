@@ -2,3 +2,24 @@
     background-color:#6f42c1;
     
 }
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  /* gradient text */
+  background: linear-gradient(90deg, #ff4b2b, #ffcd3c, #4caf50, #2196f3, #9c27b0);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* animation */
+  animation: heroGradient 5s ease-in-out infinite;
+}
+
+@keyframes heroGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
