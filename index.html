@@ -78,6 +78,51 @@
     </ul>
   </div>
 </div>
+<!-- Chatbot Floating Button -->
+<!-- Wrapper: bottom-right -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+  <!-- Animated text above the icon -->
+  <div class="d-inline-block mb-2">
+    <div class="bg-light border rounded-pill shadow-sm px-3 py-1">
+      <span class="fw-medium text-dark typing">
+        Hey there, how may I help you?
+      </span>
+    </div>
+  </div>
+
+  <!-- Chat icon button -->
+  <button
+    class="btn btn-primary rounded-circle shadow d-flex align-items-center justify-content-center"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#chatbotWindow"
+    aria-expanded="false"
+    aria-controls="chatbotWindow"
+    style="width: 56px; height: 56px;">
+    💬
+  </button>
+</div>
+
+<!-- Chatbot Window -->
+<<div id="chatbotWindow" class="collapse position-fixed bottom-0 end-0 p-3">
+  <div class="card shadow-lg" style="width: 340px; animation: slideUp 0.4s ease-out;">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+      <span>Chatbot</span>
+      <button type="button" class="btn-close btn-close-white"
+              data-bs-toggle="collapse" data-bs-target="#chatbotWindow"
+              aria-label="Close"></button>
+    </div>
+    <div class="card-body" style="height: 300px; overflow-y: auto;" id="chatbox">
+      <p><b>Bot:</b> Hello! How can I help you?</p>
+    </div>
+    <div class="card-footer">
+      <div class="input-group">
+        <input type="text" id="userInput" class="form-control" placeholder="Type a message...">
+        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 <script src="prof.js"></script>
