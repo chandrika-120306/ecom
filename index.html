@@ -48,22 +48,61 @@
   </div>
 </nav>
 
-</div>
 <div class="container mt-5">
-  <div class="row align-items-center">
-    <!-- left: image -->
-    <div class="col-md-6">
-      <img src="bg.jpg" class="img-fluid" alt="Shopping image">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <img src="cart.jpg" class="carousel-bg" alt="Cart">
+        <div class="carousel-content">
+          <div class="content-box">
+            <h2 class="mb-2">WELCOME TO MYCART</h2>
+            <p class="mb-0">Find clothes, furniture and more at amazing prices.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <img src="bg.jpg" class="carousel-bg" alt="Background">
+        <div class="carousel-content">
+          <div class="content-box">
+            <h2 class="mb-2">WELCOME TO MYCART</h2>
+            <p class="mb-0">Discover stylish home decor and essentials.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <img src="pic3.png" class="carousel-bg" alt="Third">
+        <div class="carousel-content">
+          <div class="content-box">
+            <h2 class="mb-2">WELCOME TO MYCART</h2>
+            <p class="mb-0">Shop electronics, fashion, and more conveniently.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-
-    <!-- right: text -->
-    <div class="col-md-6">
-      <h2 class="hero-title">WELCOME TO MYCART</h2>
-      <p>Find clothes, furniture and more at amazing prices.</p>
-    </div>
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
+
+
+
+
+    
 
 <div class="position-fixed bottom-0 start-0 p-3">
   <div class="dropdown">
@@ -78,19 +117,14 @@
     </ul>
   </div>
 </div>
-<!-- Chatbot Floating Button -->
-<!-- Wrapper: bottom-right -->
-<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
-  <!-- Animated text above the icon -->
+
+<!-- Floating Chat Bubble + Icon -->
+<div id="chatLauncher" class="position-fixed bottom-0 end-0 p-3" style="z-index:1050;">
   <div class="d-inline-block mb-2">
     <div class="bg-light border rounded-pill shadow-sm px-3 py-1">
-      <span class="fw-medium text-dark typing">
-        Hey there, how may I help you?
-      </span>
+      <span class="fw-medium text-dark typing">Hey there, how may I help you?</span>
     </div>
   </div>
-
-  <!-- Chat icon button -->
   <button
     class="btn btn-primary rounded-circle shadow d-flex align-items-center justify-content-center"
     type="button"
@@ -98,31 +132,32 @@
     data-bs-target="#chatbotWindow"
     aria-expanded="false"
     aria-controls="chatbotWindow"
-    style="width: 56px; height: 56px;">
+    style="width:56px;height:56px;">
     💬
   </button>
 </div>
 
 <!-- Chatbot Window -->
-<<div id="chatbotWindow" class="collapse position-fixed bottom-0 end-0 p-3">
-  <div class="card shadow-lg" style="width: 340px; animation: slideUp 0.4s ease-out;">
+<div id="chatbotWindow" class="collapse position-fixed bottom-0 end-0 p-3">
+  <div class="card shadow-lg" style="width:340px; animation: slideUp 0.4s ease-out;">
     <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
       <span>Chatbot</span>
       <button type="button" class="btn-close btn-close-white"
-              data-bs-toggle="collapse" data-bs-target="#chatbotWindow"
-              aria-label="Close"></button>
+              data-bs-toggle="collapse" data-bs-target="#chatbotWindow"></button>
     </div>
-    <div class="card-body" style="height: 300px; overflow-y: auto;" id="chatbox">
+    <div class="card-body" style="height:300px; overflow-y:auto;" id="chatbox">
       <p><b>Bot:</b> Hello! How can I help you?</p>
     </div>
     <div class="card-footer">
       <div class="input-group">
         <input type="text" id="userInput" class="form-control" placeholder="Type a message...">
-        <button class="btn btn-primary" onclick="sendMessage()">Send</button>
+        <button class="btn btn-primary" type="button" onclick="sendMessage()">Send</button>
       </div>
     </div>
   </div>
 </div>
+
+
 
     <!-- Optional JavaScript; choose one of the two! -->
 <script src="prof.js"></script>

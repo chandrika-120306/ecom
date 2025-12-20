@@ -9,14 +9,18 @@
     // Here you would clear session / redirect in a real app
   }
  
-document.getElementById('chatbotWindow').addEventListener('show.bs.collapse', () => {
-  document.getElementById('chatLauncher').style.display = 'none';
+// Hide launcher when chatbot opens, show again when closed
+const chatbotWindow = document.getElementById('chatbotWindow');
+const chatLauncher = document.getElementById('chatLauncher');
+
+chatbotWindow.addEventListener('show.bs.collapse', () => {
+  chatLauncher.style.display = 'none';
 });
-document.getElementById('chatbotWindow').addEventListener('hidden.bs.collapse', () => {
-  document.getElementById('chatLauncher').style.display = 'block';
+chatbotWindow.addEventListener('hidden.bs.collapse', () => {
+  chatLauncher.style.display = 'block';
 });
 
- function sendMessage() {
+function sendMessage() {
   const inputEl = document.getElementById("userInput");
   const chatbox = document.getElementById("chatbox");
   const text = inputEl.value.trim();
@@ -35,3 +39,4 @@ function getBotResponse(input) {
   if (input.includes("bye")) return "Goodbye!";
   return "Sorry, I don’t understand that.";
 }
+

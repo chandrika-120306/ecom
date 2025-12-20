@@ -2,6 +2,7 @@
     background-color:#6f42c1;
     
 }
+
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
@@ -29,25 +30,54 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Typing effect for the text above the icon */
 .typing {
-  display: inline-block;
-  white-space: nowrap;
+  display:inline-block; white-space:nowrap; overflow:hidden;
+  border-right:2px solid rgba(0,0,0,.3);
+  width:0ch;
+  animation: typing 2.2s steps(28,end) forwards, blink 0.8s step-end infinite;
+}
+@keyframes typing { from{width:0ch;} to{width:28ch;} }
+@keyframes blink { 0%,100%{border-color:transparent;} 50%{border-color:rgba(0,0,0,.3);} }
+
+/* Uniform slide height */
+#heroCarousel .carousel-item {
+  height: 500px;           /* adjust to your design */
+  position: relative;
+}
+
+/* Make image behave like a background (no pasted look) */
+#heroCarousel .carousel-bg {
+  position: absolute;
+  inset: 0;                /* top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fills and crops naturally */
+  object-position: center; /* centers focal point */
+}
+
+/* Right-side content aligned vertically */
+#heroCarousel .carousel-content {
+  position: relative;      /* sits above the image */
+  height: 100%;
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: flex-end; /* push to right side */
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+/* Optional subtle background to improve readability on bright images */
+#heroCarousel .content-box {
+  max-width: 420px;
+  background: rgba(0, 0, 0, 0.45); /* remove if you want pure text over image */
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);       /* softens background slightly */
+}
+
+/* Prevent layout jumps */
+.carousel,
+.carousel-inner {
   overflow: hidden;
-  border-right: 2px solid rgba(0,0,0,.3);
-  /* Adjust the width to the text length (ch ~ character units) */
-  width: 0ch;
-  animation:
-    typing 2.2s steps(28, end) forwards,
-    blink 0.8s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0ch; }
-  to   { width: 28ch; } /* match character count of the message */
-}
-
-@keyframes blink {
-  0%, 100% { border-color: rgba(0,0,0,0); }
-  50%      { border-color: rgba(0,0,0,.3); }
 }
