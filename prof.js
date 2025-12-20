@@ -37,6 +37,63 @@ function getBotResponse(input) {
   if (input.includes("hours")) return "We are open 9 AM - 6 PM.";
   if (input.includes("help")) return "I can answer FAQs and guide you. What do you need?";
   if (input.includes("bye")) return "Goodbye!";
+  if (input.includes("what is this website")) return "This is a shopping website where you can buy clothes, furniture, and snacks.";
+  if (input.includes("who are you")) return "I am a chatbot assistant for this shopping website.";
+  if (input.includes("offers")) return "We have exciting offers on all products! check in the offers section which will be enabled when offers are there";
   return "Sorry, I don’t understand that.";
 }
+let cartCount = 0;
 
+// Handle "Add to Cart" button clicks
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+  btn.addEventListener('click', e => {
+    cartCount++;
+    document.getElementById('cartCount').textContent = cartCount;
+    alert("Item added to cart!");
+  });
+});
+
+// Handle "Buy Now" button clicks
+document.querySelectorAll('.buy-now').forEach(btn => {
+  btn.addEventListener('click', e => {
+    alert("Proceeding to checkout for " + 
+          e.target.closest('.product').dataset.name);
+    // Here you can redirect to checkout page
+  });
+});
+
+// Enable drag & drop
+document.querySelectorAll('.product').forEach(item => {
+  item.addEventListener('dragstart', e => {
+    e.dataTransfer.setData("text/plain", item.dataset.name);
+  });
+});
+
+const cartBtn = document.getElementById('cartBtn');
+cartBtn.addEventListener('dragover', e => e.preventDefault());
+cartBtn.addEventListener('drop', e => {
+  e.preventDefault();
+  const productName = e.dataTransfer.getData("text/plain");
+  cartCount++;
+  document.getElementById('cartCount').textContent = cartCount;
+  alert(productName + " added to cart!");
+});
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+  btn.addEventListener('click', e => {
+    const product = e.target.closest('.product');
+    const item = {
+      name: product.dataset.name,
+      price: product.querySelector('.card-text').textContent.replace("₹",""),
+      image: product.querySelector('img').src
+    };
+
+    // Get existing cart or start new
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push(item);
+
+    // Save back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert(item.name + " added to cart!");
+  });
+});

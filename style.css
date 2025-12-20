@@ -81,3 +81,22 @@
 .carousel-inner {
   overflow: hidden;
 }
+/* Style the search button */
+.btn-outline-success {
+  background-color: #28a745;   /* Bootstrap green */
+  color: #fff;                 /* white text */
+  border: none;                /* remove border */
+  padding: 0.5rem 1.2rem;      /* bigger click area */
+  border-radius: 25px;         /* pill shape */
+  transition: all 0.3s ease;   /* smooth hover */
+}
+
+.btn-outline-success:hover {
+  background-color: #218838;   /* darker green on hover */
+  transform: scale(1.05);      /* subtle zoom */
+}
+.card-img-top {
+  height: 250px;          /* pick a uniform height */
+  object-fit: cover;      /* crop to fill nicely */
+  object-position: center;/* center the crop */
+}

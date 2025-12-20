@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MyCart - Shopping Cart</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="furniture.html">Furniture</a></li>
+            <li class="nav-item"><a class="nav-link" href="snacks.html">Snacks</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="cloths.html" id="navbarDropdown" role="button" 
+                 data-bs-toggle="dropdown" aria-expanded="false">Clothes</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="inside/male.html">Male</a></li>
+                <li><a class="dropdown-item" href="inside/female.html">Female</a></li>
+                <li><a class="dropdown-item" href="inside/kids.html">Kids</a></li>
+              </ul>
+            </li>
+          </ul>
+          
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+    <!-- Cart Content -->
+    <div class="container mt-5">
+      <h2 class="mb-4">🛒 Your Cart</h2>
+      <div id="cartItems" class="row">
+        <!-- Items will be injected here -->
+      </div>
+    </div>
+
+    <!-- Profile Dropdown (same as main layout) -->
+    <div class="position-fixed bottom-0 start-0 p-3">
+      <div class="dropdown">
+        <button class="btn p-0 border-0 bg-transparent" id="profileMenu"
+                data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="pp.png" class="rounded-circle" width="60" height="60" alt="Profile">
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileMenu">
+          <li><button class="dropdown-item" onclick="showInfo()">Information</button></li>
+          <li><button class="dropdown-item" onclick="logoutUser()">Logout</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Chatbot (same as main layout) -->
+    <div id="chatLauncher" class="position-fixed bottom-0 end-0 p-3" style="z-index:1050;">
+      <div class="d-inline-block mb-2">
+        <div class="bg-light border rounded-pill shadow-sm px-3 py-1">
+          <span class="fw-medium text-dark typing">Hey there, how may I help you?</span>
+        </div>
+      </div>
+      <button class="btn btn-primary rounded-circle shadow d-flex align-items-center justify-content-center"
+              type="button" data-bs-toggle="collapse" data-bs-target="#chatbotWindow"
+              aria-expanded="false" aria-controls="chatbotWindow"
+              style="width:56px;height:56px;">💬</button>
+    </div>
+
+    <div id="chatbotWindow" class="collapse position-fixed bottom-0 end-0 p-3">
+      <div class="card shadow-lg" style="width:340px; animation: slideUp 0.4s ease-out;">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <span>Chatbot</span>
+          <button type="button" class="btn-close btn-close-white"
+                  data-bs-toggle="collapse" data-bs-target="#chatbotWindow"></button>
+        </div>
+        <div class="card-body" style="height:300px; overflow-y:auto;" id="chatbox">
+          <p><b>Bot:</b> Hello! How can I help you?</p>
+        </div>
+        <div class="card-footer">
+          <div class="input-group">
+            <input type="text" id="userInput" class="form-control" placeholder="Type a message...">
+            <button class="btn btn-primary" type="button" onclick="sendMessage()">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <scripy src="cart.js"></script>
+
+    <script src="prof.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
