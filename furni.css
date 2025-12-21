@@ -1,0 +1,26 @@
+ .card-img-top {
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none; /* allows drag even if hovering image */
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .card.product {
+      cursor: grab;
+      width: 100%;
+    }
+    .card.product:active {
+      cursor: grabbing;
+    }
+    #cartIcon {
+      cursor: pointer;
+    }
+    #cartItems .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* optional spacing between cards */
+}

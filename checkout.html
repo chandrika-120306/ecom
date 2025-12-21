@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+</head>
+<body>
+
+<h2>Checkout</h2>
+
+<div id="checkoutItem"></div>
+
+<h3>Total: ₹<span id="total"></span></h3>
+
+<button>Proceed to Payment</button>
+
+<script>
+  const item = JSON.parse(localStorage.getItem("buyNowItem"));
+
+  if (item) {
+    document.getElementById("checkoutItem").innerHTML = `
+      <img src="${item.image}" width="150"><br>
+      <strong>${item.name}</strong><br>
+      Price: ₹${item.price}<br>
+      Quantity: ${item.quantity}
+    `;
+
+    document.getElementById("total").textContent = item.price;
+  }
+</script>
+
+</body>
+</html>
