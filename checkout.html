@@ -1,32 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Checkout</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Left side: Brand + Home -->
+      <a class="navbar-brand" href="#">My Shop</a>
+      <a href="index.html" class="btn btn-outline-light ms-2">Home</a>
 
-<h2>Checkout</h2>
+      <!-- Right side: Cart -->
+      <div class="d-flex ms-auto">
+        <button id="cartIcon" class="btn btn-outline-light">Cart</button>
+      </div>
+    </div>
+  </nav>
 
-<div id="checkoutItem"></div>
+  <!-- Checkout Section -->
+  <div class="container mt-4">
+    <h3>Checkout</h3>
+    <div id="checkoutProduct"></div>
+  </div>
 
-<h3>Total: ₹<span id="total"></span></h3>
+  <!-- Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buyItem = JSON.parse(sessionStorage.getItem("buyNowItem"));
 
-<button>Proceed to Payment</button>
+      if (buyItem) {
+        document.getElementById("checkoutProduct").innerHTML = `
+          <div class="card" style="max-width: 400px;">
+            <img src="${buyItem.image}" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">${buyItem.name}</h5>
+              <p class="card-text">₹${buyItem.price}</p>
+              <p class="card-text">Quantity: ${buyItem.quantity}</p>
+              <div class="d-flex">
+                <button id="placeOrderBtn" class="btn btn-success me-2">Place Order</button>
+                <button id="backBtn" class="btn btn-secondary">Go Back</button>
+              </div>
+            </div>
+          </div>
+        `;
 
-<script>
-  const item = JSON.parse(localStorage.getItem("buyNowItem"));
+        // Place Order alert
+        document.getElementById("placeOrderBtn").addEventListener("click", function () {
+          alert("✅ Order placed successfully!");
+          sessionStorage.removeItem("buyNowItem");
+        });
 
-  if (item) {
-    document.getElementById("checkoutItem").innerHTML = `
-      <img src="${item.image}" width="150"><br>
-      <strong>${item.name}</strong><br>
-      Price: ₹${item.price}<br>
-      Quantity: ${item.quantity}
-    `;
+        // Go Back button → previous page
+        document.getElementById("backBtn").addEventListener("click", function () {
+          window.history.back();
+        });
 
-    document.getElementById("total").textContent = item.price;
-  }
-</script>
-
+        // Cart button → cart.html
+        document.getElementById("cartIcon").addEventListener("click", function () {
+          window.location.href = "cart.html";
+        });
+      } else {
+        document.getElementById("checkoutProduct").innerHTML =
+          "<div class='alert alert-info'>No product selected for checkout.</div>";
+      }
+    });
+  </script>
 </body>
 </html>
