@@ -1,26 +1,38 @@
- .card-img-top {
-      height: 250px;
-      object-fit: cover;
-      object-position: center;
-      pointer-events: none; /* allows drag even if hovering image */
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .card.product {
-      cursor: grab;
-      width: 100%;
-    }
-    .card.product:active {
-      cursor: grabbing;
-    }
-    #cartIcon {
-      cursor: pointer;
-    }
-    #cartItems .row {
+.card-img-top {
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none; /* allows drag even if hovering image */
+}
+
+/* General row layout for product grids */
+#productsGrid .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem; /* optional spacing between cards */
+  gap: 1rem; /* spacing between product cards */
+}
+
+.card.product {
+  cursor: grab;
+  /* ❌ removed width:100% so Bootstrap col-md-4 works */
+}
+
+.card.product:active {
+  cursor: grabbing;
+}
+
+#cartIcon {
+  cursor: pointer;
+}
+
+/* Cart page layout only */
+#cartItems .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* spacing between cart cards */
+}
+#productsGrid .row > .col-md-4,
+#cartItems .row > .col-md-4 {
+  flex: 1 1 calc(33.333% - 1rem); /* 3 per row */
+  max-width: calc(33.333% - 1rem);
 }

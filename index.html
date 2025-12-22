@@ -40,14 +40,14 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>-->
       </ul>
-      <ul class="navbar-nav mx-auto">
-  <li class="nav-item">
-    <button class="btn btn-warning">
-      <a href="cart.html" class="btn btn-warning">🛒 Your Cart <span id="cartCount">0</span></a>
+      <div id="cartIcon"
+     class="btn btn-warning"
+     ondrop="dropToCart(event)"
+     ondragover="allowDrop(event)"
+     style="cursor:pointer;">
+  🛒 Your Cart <span id="cartCount">0</span>
+</div>
 
-    </button>
-  </li>
-</ul>
       
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
