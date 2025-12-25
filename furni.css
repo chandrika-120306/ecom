@@ -10,6 +10,11 @@
 
 }
 /* General row layout for product grids */
+.card-body .btn {
+  width: 100%;
+  margin: 0.25rem 0;
+}
+
 #productsGrid .row {
   display: flex;
   flex-wrap: wrap;
