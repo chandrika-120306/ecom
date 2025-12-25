@@ -198,17 +198,17 @@ function displayProducts(productsList) {
   }
 
   let html = "";
-  productsList.forEach(p => {
+  productsList.forEach(item => {
     html += `
-      <div class="col-6 col-md-4 mb-4">
-        <div class="card h-100 shadow-sm">
-          <img src="${p.image}" class="card-img-top" alt="${p.name}" style="height:200px;object-fit:cover;">
+      <div class="col-md-4 mb-3">
+        <div class="card product">
+          <img src="${item.image}" class="card-img-top" alt="${item.name}">
           <div class="card-body">
-            <h5 class="card-title">${p.name}</h5>
-            <p class="card-text">${p.category}</p>
-            <a href="${p.link}" class="btn btn-primary">View</a>
-            <button class="btn btn-warning" onclick="addToCart('${p.name}')">Add to Cart</button>
-            <button class="btn btn-success" onclick="buyNow('${p.name}')">Buy Now</button>
+            <h5 class="card-title">${item.name}</h5>
+            <p class="card-text">${item.category}</p>
+            <a href="${item.link}" class="btn btn-primary">View</a>
+            <button class="btn btn-warning" onclick="addToCart('${item.name}')">Add to Cart</button>
+            <button class="btn btn-success" onclick="buyNow('${item.name}')">Buy Now</button>
           </div>
         </div>
       </div>
