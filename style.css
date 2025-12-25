@@ -1,6 +1,10 @@
 .custom-nav{
     background-color:#6f42c1;
-    
+     position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1050; /* stays above dropdown */
+
 }
 
 .hero-title {
