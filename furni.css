@@ -1,10 +1,12 @@
-.card-img-top {
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-  pointer-events: none; /* allows drag even if hovering image */
-}
+.card.product .card-img-top {
+  width: 100% !important;
+  height: 250px !important;   /* fixed card height */
+  object-fit: contain !important; /* shrink to fit */
+  object-position: center !important;
+  background-color: #fff;     /* fills empty space */
+  pointer-events: none;
 
+}
 /* General row layout for product grids */
 #productsGrid .row {
   display: flex;
@@ -35,4 +37,11 @@
 #cartItems .row > .col-md-4 {
   flex: 1 1 calc(33.333% - 1rem); /* 3 per row */
   max-width: calc(33.333% - 1rem);
+}
+@media (max-width: 768px) {
+  #productsGrid .row > .col-md-4,
+  #cartItems .row > .col-md-4 {
+    flex: 1 1 calc(50% - 1rem); /* 2 per row on smaller screens */
+    max-width: calc(50% - 1rem);
+  }
 }

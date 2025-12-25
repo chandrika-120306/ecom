@@ -8,8 +8,8 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
-    <title>furniture</title>
-    
+
+    <title>Male</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark custom-nav">
@@ -41,91 +41,20 @@
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>-->
       </ul>
-      <!-- Centered Add to Cart button -->
-<div id="cartIcon"
+      <div id="cartIcon"
      class="btn btn-warning"
      ondrop="dropToCart(event)"
      ondragover="allowDrop(event)"
      style="cursor:pointer;">
   🛒 Your Cart <span id="cartCount">0</span>
 </div>
-
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-success" type="submit">Search</button>
+        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
-
-    <div class="container mt-4" id="productsGrid" >
-  
-  <div class="row">
-
-    <!-- Product 1 -->
-    <div class="col-md-4">
-      <div class="card product"
-           draggable="true"
-           ondragstart="dragProduct(event)"
-           data-name="Comfort Sofa"
-           data-price="15000"
-           data-image="inside/sofa.webp">
-        <img src="inside/sofa.webp" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Comfort Sofa</h5>
-          <p class="card-text">₹15,000</p>
-          <button class="btn btn-success add-to-cart">Add to Cart</button>
-        <button class="btn btn-primary buy-now" onclick="buyNow(this)">
-  Buy Now
-</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="col-md-4">
-      <div class="card product"
-           draggable="true"
-           ondragstart="dragProduct(event)"
-           data-name="Dressing Table"
-           data-price="8500"
-           data-image="inside/dresst.jpg">
-        <img src="inside/dresst.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Dressing Table</h5>
-          <p class="card-text">₹8,500</p>
-          <button class="btn btn-success add-to-cart">Add to Cart</button>
-       <button class="btn btn-primary buy-now" onclick="buyNow(this)">
-  Buy Now
-</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="col-md-4">
-      <div class="card product"
-           draggable="true"
-           ondragstart="dragProduct(event)"
-           data-name="Dining Table"
-           data-price="12000"
-           data-image="inside/dtable.png">
-        <img src="inside/dtable.png" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Dining Table</h5>
-          <p class="card-text">₹12,000</p>
-          <button class="btn btn-success add-to-cart">Add to Cart</button>
-          <button class="btn btn-primary buy-now" onclick="buyNow(this)">
-  Buy Now
-</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
 <div class="position-fixed bottom-0 start-0 p-3">
   <div class="dropdown">
     <button class="btn p-0 border-0 bg-transparent" id="profileMenu"
@@ -139,7 +68,14 @@
     </ul>
   </div>
 </div>
+<div class="container mt-4" id="productsGrid" >
+  
+  <div class="row">
 
+<div class="col-md-4">
+  
+  </div>
+  </div>
 <!-- Floating Chat Bubble + Icon -->
 <div id="chatLauncher" class="position-fixed bottom-0 end-0 p-3" style="z-index:1050;">
   <div class="d-inline-block mb-2">
@@ -178,8 +114,9 @@
     </div>
   </div>
 </div>
-<script src="cart.js"></script>
+
     <!-- Optional JavaScript; choose one of the two! -->
+<script src="cart.js"></script>
 <script src="prof.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

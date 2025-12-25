@@ -101,7 +101,7 @@ function renderCartPage() {
     container.innerHTML += `
       <div class="col-md-4 mb-3">
         <div class="card">
-          <img src="${item.image}" class="card-img-top">
+          <img src="${item.image}" class="card-img-top product-img">
           <div class="card-body">
             <h5>${item.name}</h5>
             <p>₹${item.price} × ${qty}</p>
