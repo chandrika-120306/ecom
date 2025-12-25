@@ -100,8 +100,8 @@ function renderCartPage() {
 
     container.innerHTML += `
       <div class="col-md-4 mb-3">
-        <div class="card">
-          <img src="${item.image}" class="card-img-top product-img">
+        <div class="card product">
+          <img src="${item.image}" class="card-img-top ">
           <div class="card-body">
             <h5>${item.name}</h5>
             <p>₹${item.price} × ${qty}</p>
@@ -145,3 +145,26 @@ document.addEventListener("DOMContentLoaded", function () {
     renderCartPage();
   }
 });
+// ---------- Add to Cart (button click) ----------
+function addToCart(button) {
+  const product = button.closest(".product");
+  const item = {
+    name: product.dataset.name,
+    price: product.dataset.price,
+    image: product.dataset.image,
+    quantity: 1
+  };
+
+  let cart = getCart();
+
+  const existing = cart.find(p => p.name === item.name);
+  if (existing) {
+    existing.quantity = (existing.quantity || 1) + 1;
+  } else {
+    cart.push(item);
+  }
+
+  setCart(cart);
+  updateCartCount();
+  alert("Product added to cart");
+}

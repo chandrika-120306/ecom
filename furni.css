@@ -3,7 +3,9 @@
   height: 250px !important;   /* fixed card height */
   object-fit: contain !important; /* shrink to fit */
   object-position: center !important;
-  background-color: #fff;     /* fills empty space */
+  background-color: #f9f9f9;       /* subtle neutral background */
+  border-radius: 6px;              /* rounded corners for polish */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* soft shadow */
   pointer-events: none;
 
 }
@@ -44,4 +46,8 @@
     flex: 1 1 calc(50% - 1rem); /* 2 per row on smaller screens */
     max-width: calc(50% - 1rem);
   }
+}
+.card.product .card-img-top:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }

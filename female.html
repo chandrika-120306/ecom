@@ -68,14 +68,71 @@
     </ul>
   </div>
 </div>
-<div class="container mt-4" id="productsGrid" >
-  
+<div class="container mt-4" id="femaleProductsGrid">
   <div class="row">
 
-<div class="col-md-4">
-  
+    <!-- Product 1: Saree -->
+    <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="Saree"
+           data-price="3500"
+           data-image="inside/saree.jpg">
+        <img src="inside/saree.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Saree</h5>
+          <p class="card-text">₹3,500</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2: Professional Wear -->
+    <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="Trousers & Jacket"
+           data-price="2800"
+           data-image="inside/pant.jpg">
+        <img src="inside/pant.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Trousers & Jacket</h5>
+          <p class="card-text">₹4,800</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3: Dress -->
+    <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="Dress"
+           data-price="2200"
+           data-image="inside/dress.jpg">
+        <img src="inside/dress.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Dress</h5>
+          <p class="card-text">₹2,200</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
-  </div>
+</div>
 <!-- Floating Chat Bubble + Icon -->
 <div id="chatLauncher" class="position-fixed bottom-0 end-0 p-3" style="z-index:1050;">
   <div class="d-inline-block mb-2">
