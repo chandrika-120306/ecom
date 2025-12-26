@@ -43,3 +43,12 @@ function getBotResponse(input) {
   return "Sorry, I don’t understand that.";
 }
 
+function showInfo() {
+      // Redirect to another page
+      window.location.href = "info.html";
+    }
+
+
+function logoutUser() {
+  alert("You have been logged out!");
+}
