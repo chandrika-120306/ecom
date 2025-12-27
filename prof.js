@@ -52,3 +52,8 @@ function showInfo() {
 function logoutUser() {
   alert("You have been logged out!");
 }
+document.getElementById("footer").innerHTML = `
+    <footer style="width:100%; height:40px; background:#222; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px;">
+      © 2025 Your E-Commerce Store
+    </footer>
+  `;
