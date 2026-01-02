@@ -33,13 +33,27 @@ function sendMessage() {
 }
 
 function getBotResponse(input) {
+  input = input.toLowerCase(); // normalize input for easier matching
+
   if (input.includes("hello") || input.includes("hi")) return "Hi there! 👋";
   if (input.includes("hours")) return "We are open 9 AM - 6 PM.";
   if (input.includes("help")) return "I can answer FAQs and guide you. What do you need?";
   if (input.includes("bye")) return "Goodbye!";
-  if (input.includes("what is this website")) return "This is a shopping website where you can buy clothes, furniture, and snacks.";
-  if (input.includes("who are you")) return "I am a chatbot assistant for this shopping website.";
-  if (input.includes("offers")) return "We have exciting offers on all products! check in the offers section which will be enabled when offers are there";
+  if (input.includes("what is this website") || input.includes("about")) 
+    return "This is an e-commerce shopping website where you can buy clothes, furniture, groceries, and more.";
+  if (input.includes("who are you") || input.includes("you")) 
+    return "I am your friendly chatbot assistant here to help with shopping queries.";
+  if (input.includes("offers") || input.includes("deal")) 
+    return "We have exciting New Year offers on all products! 🎉 Check the offers section.";
+  if (input.includes("shop")) 
+    return "You can explore categories like Clothes, Furniture, and Groceries from the navigation menu.";
+  if (input.includes("cart")) 
+    return "Your cart keeps track of all the items you add. 🛒 You can checkout anytime.";
+  if (input.includes("info")) 
+    return "This page provides product details, discounts, and special festival offers.";
+  if (input.includes("contact")) 
+    return "You can reach us via the Contact page for support or queries.";
+
   return "Sorry, I don’t understand that.";
 }
 
