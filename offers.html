@@ -3,51 +3,156 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sankranthi Offers</title>
+  <title>New year Offers</title>
+  <link rel="stylesheet" href="furni.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark custom-nav fixed-top">
+  <div class="container-fluid">
 
+    <!-- Left side: brand + toggler -->
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Collapsible nav links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="furniture.html">Furniture</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="snacks.html">Groceries</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="cloths.html" id="navbarDropdown" 
+             role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Clothes
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="male.html">Male</a></li>
+            <li><a class="dropdown-item" href="female.html">Female</a></li>
+            <li><a class="dropdown-item" href="kids.html">Kids</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right side: cart + search (always visible) -->
+    <div class="d-flex align-items-center">
+      <div id="cartIcon" class="btn btn-warning me-2"
+           ondrop="dropToCart(event)" ondragover="allowDrop(event)" style="cursor:pointer;">
+        🛒 Your Cart <span id="cartCount">0</span>
+      </div>
+     <form id="searchForm" class="d-flex">
+  <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+  <button class="btn btn-success" type="submit">Search</button>
+</form>
+    </div>
+
+  </div>
+</nav>
   <div class="container mt-5">
-    <h1 class="text-center text-danger">🎉 Sankranthi Special Offers 🎉</h1>
+    <h1 class="text-center text-danger">🎉 new year Special Offers 🎉</h1>
     <p class="lead text-center">Celebrate the festival with amazing discounts and deals!</p>
+<div class="container mt-4" id="productsGrid">
+  <div class="row">
 
-    <div class="row mt-4">
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="ethnic.jpg" class="card-img-top" alt="Ethnic Wear">
-          <div class="card-body">
-            <h5 class="card-title">Ethnic Wear</h5>
-            <p class="card-text">Flat 30% off on festive collections.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="snacks.jpg" class="card-img-top" alt="Snacks">
-          <div class="card-body">
-            <h5 class="card-title">Festive Snacks</h5>
-            <p class="card-text">Buy 2 get 1 free on selected items.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card shadow-sm">
-          <img src="decor.jpg" class="card-img-top" alt="Decor">
-          <div class="card-body">
-            <h5 class="card-title">Home Decor</h5>
-            <p class="card-text">Extra ₹200 off with code <b>SANKRANTHI</b>.</p>
-          </div>
+    <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="Boys traditional Wear"
+           data-price="1800"
+           data-image="inside/bt.jpg">
+        <img src="inside/bt.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Boys traditional Wear</h5>
+          <p class="card-text"><s>₹2,100</s>  ₹1,800</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">Buy Now</button>
         </div>
       </div>
     </div>
-
+     <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="saree"
+           data-price="2000"
+           data-image="inside/saree.jpg">
+        <img src="inside/saree.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">saree</h5>
+          <p class="card-text"><s>₹2,500</s>  ₹2,000</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+<div class="col-md-4">
+  <div class="card product"
+       draggable="true"
+       ondragstart="dragProduct(event)"
+       data-name="Pure Ghee"
+       data-price="550"
+       data-image="inside/ghee.jpg">
+    <img src="inside/ghee.jpg" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">Pure Ghee</h5>
+      <p class="card-text"><s>₹600</s>  ₹500--250ml</p>
+      <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+      <button class="btn btn-primary buy-now" onclick="buyNow(this)">Buy Now</button>
+    </div>
+  </div>
+</div>
+      <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="girls traditional Wear"
+           data-price="1800"
+           data-image="inside/gt.webp">
+        <img src="inside/gt.webp" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">girls traditional Wear</h5>
+          <p class="card-text"><s>₹2,000</s>  ₹1,800</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card product"
+           draggable="true"
+           ondragstart="dragProduct(event)"
+           data-name="mens traditional Wear"
+           data-price="1000"
+           data-image="inside/mt.jpeg">
+        <img src="inside/mt.jpeg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">mens traditional Wear</h5>
+          <p class="card-text"><s>₹1,500</s>  ₹1,000</p>
+          <button class="btn btn-success add-to-cart" onclick="addToCart(this)">Add to Cart</button>
+          <button class="btn btn-primary buy-now" onclick="buyNow(this)">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+</div>
     <div class="text-center mt-4">
       <a href="index.html" class="btn btn-secondary">⬅ Back to Home</a>
     </div>
   </div>
-
+  <div id="footer"></div>
+<script src="cart.js"></script>
+<script src="search.js"></script>
+<script src="prof.js"></script>
 </body>
 </html>

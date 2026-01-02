@@ -122,3 +122,17 @@ body {
   padding: 0.75rem 1rem;
   font-size: 1rem;
 }
+/* Simple Highlight Offer */
+.highlight-offer {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #20c997; 
+}
+
+
